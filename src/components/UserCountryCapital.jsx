@@ -5,12 +5,13 @@ export default function UserCountryCapital({ code }) {
 
   const fetchCountryData = async (code) => {
     const apiKey = import.meta.env.VITE_CAPITAL_API_KEY;
-    const url = `http://api.countrylayer.com/v2/alpha/${code}?access_key=${apiKey}`;
+    const url = `https://api.countrylayer.com/v2/alpha/${code}?access_key=${apiKey}`;
 
     try {
       const response = await fetch(url);
       const data = await response.json();
       setCapitalInfo(data.capital);
+      console.log(capitalInfo)
     } catch (error) {
       console.error("Error fetching country captial data:", error);
     }

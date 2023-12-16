@@ -1,5 +1,4 @@
 import "./App.css";
-import FlowbiteTest from "./Components/FlowbiteTest";
 
 import HomePage from "./pages/HomePage";
 

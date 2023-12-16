@@ -12,6 +12,7 @@ export default function UserFlag({ code }) {
       const data = await response.json();
       setFlagInfo(data.flags.svg);
       setFlagAlt(data.flags.alt);
+      console.log(data);
     } catch (error) {
       console.error("Error fetching country flag data:", error);
     }

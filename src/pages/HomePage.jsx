@@ -44,32 +44,51 @@ export default function HomePage() {
       .then((response) => response.json())
       .then((data) => {
         setUserDate(data);
-        console.log(data)
+        console.log(data);
       })
       .catch((error) => console.log("Error fetching data:", error));
   }, []);
 
   return (
     <div>
-      <h3>User Date: {formattedDate}</h3>
       <br />
       {userDate.location ? (
-        <>
-          <h3>Your IP address is: {userDate.ip}</h3>
-          <h3>
-            User Time: {formattedTime} {BeforeAfterMiday}{" "}
-            {userDate.location.timezone} GMT
-          </h3>
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "2fr 1fr",
+            gap: "20px",
+          }}
+        >
           <MapLeaflet
             position={[userDate.location.lat, userDate.location.lng]}
           />
-          <UserCountryCapital code={userDate.location.country} />
-          <UserFlag code={userDate.location.country} />
-        </>
+          <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+            <a href="#">
+              <UserFlag code={userDate.location.country} />
+            </a>
+            <div className="p-5">
+              <a href="#">
+                <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                  Your IP address is: {userDate.ip}
+                </h5>
+              </a>
+              <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                Date: {formattedDate}
+              </p>
+              <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                Time: {formattedTime} {BeforeAfterMiday}{" "}
+              </p>{" "}
+              <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                Time zone: {userDate.location.timezone} GMT
+              </p>
+              <UserCountryCapital code={userDate.location.country} />
+            </div>
+          </div>
+        </div>
       ) : (
         <p>Loading...</p>
       )}
     </div>
   );
-};
-
+}

@@ -20,5 +20,5 @@ export default function UserCountryCapital({ code }) {
     fetchCountryData(code);
   }, [code]);
 
-  return <h3>This country's capital city is {capitalInfo}</h3>;
+  return <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">This country's capital city is {capitalInfo}!</p>;
 }

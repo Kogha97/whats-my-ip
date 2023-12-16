@@ -22,10 +22,6 @@ export default function UserFlag({ code }) {
   }, [code]);
 
   return (
-    <div>
-      <div>
-        <img style={{ width: "200px" }} src={flagPic} alt={flagAlt} />
-      </div>
-    </div>
-  );
+        <img class="rounded-t-lg" src={flagPic} alt={flagAlt} />
+      );
 }

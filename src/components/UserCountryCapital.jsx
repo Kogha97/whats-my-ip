@@ -11,6 +11,7 @@ export default function UserCountryCapital({ code }) {
       const response = await fetch(url);
       const data = await response.json();
       setCapitalInfo(data.capital);
+      console.log(capitalInfo)
     } catch (error) {
       console.error("Error fetching country captial data:", error);
     }

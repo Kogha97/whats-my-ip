@@ -22,6 +22,6 @@ export default function UserFlag({ code }) {
   }, [code]);
 
   return (
-        <img class="rounded-t-lg" src={flagPic} alt={flagAlt} />
+        <img className="rounded-t-lg" src={flagPic} alt={flagAlt} />
       );
 }

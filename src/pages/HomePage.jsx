@@ -82,8 +82,7 @@ export default function HomePage() {
               <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
                 Time zone: {userDate.location.timezone} GMT
               </p>
-              <UserCountryCapital code={userDate.ip} />
-              {/* <UserCountryCapital code={userDate.location.country} /> */}
+              <UserCountryCapital code={userDate.location.country} />
             </div>
           </div>
         </div>
